@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizXamarin.Views.PreguntasView"
+             xmlns:control="clr-namespace:Xamarin.Forms.Plugin.CustomToggleButton"
+             BackgroundColor="{StaticResource BackGroundColor}"
+             Title="Preguntas">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding QuestionAnswersGroup}" 
+                          IsRefreshing="{Binding IsRefreshing}"
+                          IsGroupingEnabled="True"
+                          HorizontalOptions="FillAndExpand"
+                      VerticalOptions="StartAndExpand"
+                          BackgroundColor="{StaticResource BackGroundColor}">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Style="{StaticResource PreguntasST}">
+                                <Label Text="{Binding Key.QuestionString}"   
+                                           FontSize="Medium" TextColor="{StaticResource FontColor}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Style="{StaticResource RespuestasST}">
+                                <control:CustomToggleButton UnCheckedImage="checkboxuncheck40" 
+                                                CheckedImage="checkbox40" 
+                                                Checked="{Binding CheckedAnswer}"
+                                                WidthRequest="40" HeightRequest="40" 
+                                                Margin="10,0,0,0"/>
+                                <Label Text="{Binding AnswerString}"  FontSize="Medium" TextColor="{StaticResource FontColor}"/>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="boton" Text="Enviar respuestas"
+                        VerticalOptions="End" 
+                        IsEnabled="{Binding IsBusy}"
+                        Style="{StaticResource AcceptButtonStyle}" 
+                        Command="{Binding SalvarRespuestasCommand}"
+                        />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

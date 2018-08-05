@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizXamarin.Views.SendAnswerView" 
+             BackgroundColor="{StaticResource BackGroundColor}" NavigationPage.HasBackButton="False" Title="Respuestas enviadas">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="OkImage" HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"/>
+            <Label Text="Respuestas enviadas correctamente" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="Large" TextColor="{StaticResource FontColor}"/>
+           </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizXamarin.App">
+  <Application.Resources>
+        <ResourceDictionary>
+            <!--Colors-->
+            <Color x:Key="MainColor">#E9591A</Color>
+            <Color x:Key="FontColor">#68091F</Color>
+            <Color x:Key="AccentColor1">#C0018A</Color>
+            <Color x:Key="AccentColor2">#107100</Color>
+            <Color x:Key="BackGroundColor">#F7DDAC</Color>
+            <Color x:Key="FontLightColor">#f9f5e0</Color>
+            <!--Styles-->
+            <Style
+               x:Key="AcceptButtonStyle"
+               TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor1}" />
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="TextColor" Value="{StaticResource FontLightColor}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style
+               x:Key="AlternButtonStyle"
+               TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor2}" />
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="TextColor" Value="{StaticResource FontLightColor}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+            <Style x:Key="EncabezadoPreguntas" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{StaticResource FontColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource FontLightColor}"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+            <Style x:Key="PreguntasST" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainColor}"/>
+                <Setter Property="HeightRequest" Value="60"/>
+            </Style>
+            <Style x:Key="PreguntasLB" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainColor}"/>
+                <Setter Property="HeightRequest" Value="60"/>
+            </Style>
+            <Style x:Key="RespuestasST" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource FontLightColor}"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="6"/>
+            </Style>
+        </ResourceDictionary>
+    <!-- Application resource dictionary -->
+
+  </Application.Resources>
+</Application>

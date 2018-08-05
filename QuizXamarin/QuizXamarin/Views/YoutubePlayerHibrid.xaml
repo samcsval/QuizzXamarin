@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QuizXamarin.CustomViews"
+             x:Class="QuizXamarin.Views.YoutubePlayerHibrid"
+             xmlns:viewmodel="clr-namespace:QuizXamarin.ViewModels"
+             BackgroundColor="{StaticResource BackGroundColor}" NavigationPage.HasNavigationBar="False">
+   
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <local:HybridWebView x:Name="hybridWebView"
+                                 HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="FillAndExpand" 
+                                 BackgroundColor="{StaticResource BackGroundColor}" 
+                                 Uri="{Binding CodigoHtml}"/>
+                <Button x:Name="btnPlay" Text="Reproducir"
+                        VerticalOptions="EndAndExpand" 
+                        IsVisible="False"
+                        Style="{StaticResource AcceptButtonStyle}"
+                        Clicked="btnPlay_Clicked"
+                        />
+                <Button x:Name="boton" Text="Ir a preguntas"
+                        VerticalOptions="EndAndExpand" 
+                        IsVisible="False"
+                        Style="{StaticResource AcceptButtonStyle}" 
+                        Command="{Binding AbrirPreguntasCommand}"
+                        />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
